@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package catalog;
+
+service Catalog {
+    rpc GetProductDetails(DetailRequest) returns (DetailResponse);
+    rpc GetProductCategories(AllCategoriesRequest) returns (AllCategoriesResponse);
+    rpc GetProductsInCategory(CategoryProductsRequest) returns (CategoryProductsResponse);
+    rpc ProductSearch(SearchRequest) returns (SearchResponse);
+}
+
+message DetailRequest {
+    string sku = 1;
+}
+message DetailResponse {
+    Product product = 1;
+
+}
+
+message AllCategoriesRequest {
+    int32 Unused = 1;
+}
+message AllCategoriesResponse {
+    repeated ProductCategory categories = 1;
+
+}
+
+message CategoryProductsRequest {
+    uint64 category_id = 1;
+}
+message CategoryProductsResponse {
+    repeated Product products = 1;
+
+}
+
+message SearchRequest {
+    string search_term = 1;
+    repeated uint64 categories = 2;
+}
+message SearchResponse {
+    repeated Product search_results = 1;
+
+}
+
+
+message Product {
+    string sku = 1;
+    string name = 2;
+    string description = 3;
+    string manufacturer = 4;
+    string model = 5;
+    int64 price = 6; // don't trust decimal precision
+}
+message ProductCategory {
+    uint64 category_id = 1;
+    string name = 2;
+    string description = 3;
+}
+
