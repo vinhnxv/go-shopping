@@ -2,8 +2,8 @@ package redis
 
 import (
 	"fmt"
-	"github.com/autodidaddict/go-shopping/catalog/proto"
 	"github.com/garyburd/redigo/redis"
+	"github.com/vinhnxv/go-shopping/catalog/proto"
 )
 
 // CatalogRepository is a Redis-backed product catalog repository

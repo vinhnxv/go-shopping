@@ -6,9 +6,9 @@ import (
 	"testing"
 
 	stderrors "errors"
-	"github.com/autodidaddict/go-shopping/shipping/internal/service"
-	"github.com/autodidaddict/go-shopping/shipping/proto"
 	"github.com/micro/go-micro/errors"
+	"github.com/vinhnxv/go-shopping/shipping/internal/service"
+	"github.com/vinhnxv/go-shopping/shipping/proto"
 	"net/http"
 )
 

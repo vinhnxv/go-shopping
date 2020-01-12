@@ -2,10 +2,10 @@ package service_test
 
 import (
 	stderrors "errors"
-	"github.com/autodidaddict/go-shopping/catalog/internal/service"
-	"github.com/autodidaddict/go-shopping/catalog/proto"
 	"github.com/micro/go-micro/errors"
 	. "github.com/smartystreets/goconvey/convey"
+	"github.com/vinhnxv/go-shopping/catalog/internal/service"
+	"github.com/vinhnxv/go-shopping/catalog/proto"
 	"golang.org/x/net/context"
 	"net/http"
 	"testing"

@@ -1,13 +1,13 @@
 package main
 
 import (
-	"github.com/autodidaddict/go-shopping/catalog/internal/platform/config"
-	"github.com/autodidaddict/go-shopping/catalog/internal/platform/redis"
-	"github.com/autodidaddict/go-shopping/catalog/internal/service"
-	"github.com/autodidaddict/go-shopping/catalog/proto"
 	"github.com/micro/go-micro"
 	"github.com/micro/go-micro/service/grpc"
 	log "github.com/sirupsen/logrus"
+	"github.com/vinhnxv/go-shopping/catalog/internal/platform/config"
+	"github.com/vinhnxv/go-shopping/catalog/internal/platform/redis"
+	"github.com/vinhnxv/go-shopping/catalog/internal/service"
+	"github.com/vinhnxv/go-shopping/catalog/proto"
 	"os"
 	"time"
 )

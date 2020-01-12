@@ -1,10 +1,10 @@
 package broker
 
 import (
-	"github.com/autodidaddict/go-shopping/shipping/proto"
 	"github.com/golang/protobuf/proto"
 	"github.com/micro/go-micro/broker"
 	"github.com/micro/go-micro/util/log"
+	"github.com/vinhnxv/go-shopping/shipping/proto"
 )
 
 const (

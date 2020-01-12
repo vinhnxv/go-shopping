@@ -2,8 +2,8 @@ package redis
 
 import (
 	"fmt"
-	"github.com/autodidaddict/go-shopping/warehouse/proto"
 	"github.com/garyburd/redigo/redis"
+	"github.com/vinhnxv/go-shopping/warehouse/proto"
 )
 
 // WarehouseRepository represents a redis repository over warehouse data

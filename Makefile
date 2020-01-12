@@ -1,10 +1,10 @@
 MAIN_VERSION:=$(shell git describe --abbrev=0 --tags || echo "0.1")
 VERSION:=${MAIN_VERSION}\#$(shell git log -n 1 --pretty=format:"%h")
 HOOKS:=pre-commit
-LDFLAGSW:=-ldflags "-X github.com/autodidaddict/go-shopping/warehouse/internal/platform/config.Version=${VERSION}"
-LDFLAGSC:=-ldflags "-X github.com/autodidaddict/go-shopping/catalog/internal/platform/config.Version=${VERSION}"
-LDFLAGSS:=-ldflags "-X github.com/autodidaddict/go-shopping/shipping/internal/platform/config.Version=${VERSION}"
-LDFLAGSA:=-ldflags "-X github.com/autodidaddict/go-shopping/api/internal/platform/config.Version=${VERSION}"
+LDFLAGSW:=-ldflags "-X github.com/vinhnxv/go-shopping/warehouse/internal/platform/config.Version=${VERSION}"
+LDFLAGSC:=-ldflags "-X github.com/vinhnxv/go-shopping/catalog/internal/platform/config.Version=${VERSION}"
+LDFLAGSS:=-ldflags "-X github.com/vinhnxv/go-shopping/shipping/internal/platform/config.Version=${VERSION}"
+LDFLAGSA:=-ldflags "-X github.com/vinhnxv/go-shopping/api/internal/platform/config.Version=${VERSION}"
 
 default: run
 

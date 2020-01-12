@@ -1,14 +1,15 @@
 package main
 
 import (
-	"github.com/autodidaddict/go-shopping/shipping/internal/platform/broker"
-	"github.com/autodidaddict/go-shopping/shipping/internal/platform/config"
-	"github.com/autodidaddict/go-shopping/shipping/internal/platform/redis"
-	"github.com/autodidaddict/go-shopping/shipping/internal/service"
-	"github.com/autodidaddict/go-shopping/shipping/proto"
 	"github.com/micro/go-micro"
 	gmbroker "github.com/micro/go-micro/broker"
 	"github.com/micro/go-micro/service/grpc"
+	"github.com/vinhnxv/go-shopping/shipping/internal/platform/broker"
+	"github.com/vinhnxv/go-shopping/shipping/internal/platform/config"
+	"github.com/vinhnxv/go-shopping/shipping/internal/platform/redis"
+	"github.com/vinhnxv/go-shopping/shipping/internal/service"
+	"github.com/vinhnxv/go-shopping/shipping/proto"
+	shipping "github.com/vinhnxv/go-shopping/shipping/proto"
 	"log"
 	"time"
 )

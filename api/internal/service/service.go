@@ -2,13 +2,13 @@ package service
 
 import (
 	stderrors "errors"
-	"github.com/autodidaddict/go-shopping/catalog/proto"
-	"github.com/autodidaddict/go-shopping/shipping/proto"
-	"github.com/autodidaddict/go-shopping/warehouse/proto"
 	"github.com/emicklei/go-restful"
 	"github.com/micro/go-micro/client"
 	"github.com/micro/go-micro/errors"
 	"github.com/micro/go-micro/util/log"
+	"github.com/vinhnxv/go-shopping/catalog/proto"
+	"github.com/vinhnxv/go-shopping/shipping/proto"
+	"github.com/vinhnxv/go-shopping/warehouse/proto"
 	"golang.org/x/net/context"
 	"net/http"
 )

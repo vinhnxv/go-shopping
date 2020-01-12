@@ -1,13 +1,13 @@
 package main
 
 import (
-	"github.com/autodidaddict/go-shopping/api/internal/platform/config"
-	"github.com/autodidaddict/go-shopping/api/internal/service"
 	"github.com/emicklei/go-restful"
 	"github.com/micro/go-micro/client"
 	_ "github.com/micro/go-micro/client/grpc"
 	"github.com/micro/go-micro/util/log"
 	"github.com/micro/go-micro/web"
+	"github.com/vinhnxv/go-shopping/api/internal/platform/config"
+	"github.com/vinhnxv/go-shopping/api/internal/service"
 )
 
 const (

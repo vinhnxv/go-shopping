@@ -2,9 +2,9 @@ package broker
 
 import (
 	"fmt"
-	"github.com/autodidaddict/go-shopping/shipping/proto"
 	"github.com/golang/protobuf/proto"
 	"github.com/micro/go-micro/broker"
+	"github.com/vinhnxv/go-shopping/shipping/proto"
 	"log"
 )
 

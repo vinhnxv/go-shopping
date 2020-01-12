@@ -2,8 +2,8 @@ package redis
 
 import (
 	"fmt"
-	"github.com/autodidaddict/go-shopping/shipping/proto"
 	"github.com/garyburd/redigo/redis"
+	"github.com/vinhnxv/go-shopping/shipping/proto"
 	"math/rand"
 )
 
