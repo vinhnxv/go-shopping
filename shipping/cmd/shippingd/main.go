@@ -8,7 +8,6 @@ import (
 	"github.com/vinhnxv/go-shopping/shipping/internal/platform/config"
 	"github.com/vinhnxv/go-shopping/shipping/internal/platform/redis"
 	"github.com/vinhnxv/go-shopping/shipping/internal/service"
-	"github.com/vinhnxv/go-shopping/shipping/proto"
 	shipping "github.com/vinhnxv/go-shopping/shipping/proto"
 	"log"
 	"time"
