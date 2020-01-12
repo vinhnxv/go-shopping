@@ -31,7 +31,9 @@ func main() {
 	)
 	svc.Init()
 
-	shipping.RegisterShippingHandler(svc.Server(), service.NewShippingService(repo, publisher))
+	if err := shipping.RegisterShippingHandler(svc.Server(), service.NewShippingService(repo, publisher)); err != nil {
+		panic(err)
+	}
 
 	if err := svc.Run(); err != nil {
 		panic(err)

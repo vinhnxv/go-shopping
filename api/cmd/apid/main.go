@@ -5,10 +5,9 @@ import (
 	"github.com/autodidaddict/go-shopping/api/internal/service"
 	"github.com/emicklei/go-restful"
 	"github.com/micro/go-micro/client"
-	"github.com/micro/go-micro/web"
-
 	_ "github.com/micro/go-micro/client/grpc"
 	"github.com/micro/go-micro/util/log"
+	"github.com/micro/go-micro/web"
 )
 
 const (

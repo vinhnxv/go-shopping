@@ -26,7 +26,7 @@ func NewWarehouseService(repo warehouseRepository, itemShippedChannel chan *ship
 	return svc
 }
 
-func (w *warehouseService) GetWarehouseDetails(ctx context.Context, request *warehouse.DetailsRequest,
+func (w *warehouseService) GetWarehouseDetails(_ context.Context, request *warehouse.DetailsRequest,
 	response *warehouse.DetailsResponse) error {
 
 	if request == nil {
@@ -56,6 +56,8 @@ func (w *warehouseService) GetWarehouseDetails(ctx context.Context, request *war
 func (w *warehouseService) awaitItemShippedEvents() {
 	for shippedEvent := range w.shipChan {
 		log.Logf("Received an item shipped event! %+v\n", shippedEvent)
-		w.repo.DecrementStock(shippedEvent.Sku)
+		if err := w.repo.DecrementStock(shippedEvent.Sku); err != nil {
+			continue
+		}
 	}
 }

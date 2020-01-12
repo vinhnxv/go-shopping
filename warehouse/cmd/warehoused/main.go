@@ -23,7 +23,9 @@ func main() {
 		log.Fatalf("Broker Connect error: %v", err)
 	}
 	itemShippedChannel := make(chan *shipping.ItemShippedEvent)
-	broker.CreateEventConsumer(itemShippedChannel)
+	if err := broker.CreateEventConsumer(itemShippedChannel); err != nil {
+		log.Fatalf("Broker error: %v", err)
+	}
 
 	repo := redis.NewWarehouseRepository(":6379")
 
@@ -35,7 +37,9 @@ func main() {
 	)
 	svc.Init()
 
-	warehouse.RegisterWarehouseHandler(svc.Server(), service.NewWarehouseService(repo, itemShippedChannel))
+	if err := warehouse.RegisterWarehouseHandler(svc.Server(), service.NewWarehouseService(repo, itemShippedChannel)); err != nil {
+		panic(err)
+	}
 
 	if err := svc.Run(); err != nil {
 		panic(err)

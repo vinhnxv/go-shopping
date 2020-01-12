@@ -22,7 +22,9 @@ func (r *WarehouseRepository) GetWarehouseDetails(sku string) (details *warehous
 	if err != nil {
 		return nil, err
 	}
-	defer c.Close()
+	defer func() {
+		err = c.Close()
+	}()
 	warehouseKey := fmt.Sprintf("warehouse:%s", sku)
 	res, err := redis.Values(c.Do("HGETALL", warehouseKey))
 	var itemDetails redisWarehouseDetails
@@ -50,7 +52,9 @@ func (r *WarehouseRepository) SkuExists(sku string) (exists bool, err error) {
 	if err != nil {
 		return false, err
 	}
-	defer c.Close()
+	defer func() {
+		err = c.Close()
+	}()
 	warehouseKey := fmt.Sprintf("warehouse:%s", sku)
 	exists, err = redis.Bool(c.Do("EXISTS", warehouseKey))
 	return exists, err
@@ -62,7 +66,9 @@ func (r *WarehouseRepository) DecrementStock(sku string) (err error) {
 	if err != nil {
 		return err
 	}
-	defer c.Close()
+	defer func() {
+		err = c.Close()
+	}()
 	warehouseKey := fmt.Sprintf("warehouse:%s:stock", sku)
 	_, err = c.Do("INCRBY", warehouseKey, "-1")
 	if err != nil {
